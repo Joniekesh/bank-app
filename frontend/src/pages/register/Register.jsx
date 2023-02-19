@@ -3,7 +3,6 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AiOutlineEye } from "react-icons/ai";
 import Loader from "../../components/loader/Loader";
-
 import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
 import axios from "axios";
@@ -54,10 +53,13 @@ const Register = () => {
 		e.preventDefault();
 		setLoading(true);
 		try {
-			const res = await axios.post("http://localhost:5000/api/auth", {
-				...inputs,
-				phone,
-			});
+			const res = await axios.post(
+				"https://bank-app-uqei.onrender.com/api/auth",
+				{
+					...inputs,
+					phone,
+				}
+			);
 
 			if (res.status === 200) {
 				toast.success(res.data, { theme: "colored" });

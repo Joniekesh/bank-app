@@ -33,7 +33,7 @@ const ResetTransactionPin = () => {
 
 		try {
 			const res = await axios.put(
-				`http://localhost:5000/api/users/resetpin/${resetPinToken}`,
+				`https://bank-app-uqei.onrender.com/api/users/resetpin/${resetPinToken}`,
 				{ transactionPIN, resetPinToken },
 				config
 			);

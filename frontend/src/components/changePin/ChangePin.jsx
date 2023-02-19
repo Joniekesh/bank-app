@@ -31,10 +31,6 @@ const ChangePin = ({ setIsChangePin }) => {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 
-		// if (transactionPIN !== confirmPin) {
-		// 	toast.error("PINs do not match", { theme: "colored" });
-		// }
-
 		if (user.email !== email) {
 			return toast.error("Wrong email provided.", { theme: "colored" });
 		}

@@ -2,7 +2,6 @@ import "./dashboard.scss";
 import { AiOutlineLock } from "react-icons/ai";
 import { BsPencilSquare } from "react-icons/bs";
 import { FiEye } from "react-icons/fi";
-
 import { useEffect, useState } from "react";
 import ChangePin from "../../components/changePin/ChangePin";
 import EditProfile from "../../components/editProfile/EditProfile";
@@ -52,7 +51,7 @@ const Dashboard = ({
 			setLoading(true);
 			try {
 				const res = await axios.get(
-					`http://localhost:5000/api/transactions`,
+					"https://bank-app-uqei.onrender.com/api/transactions",
 					config
 				);
 				setTransactions(res.data);

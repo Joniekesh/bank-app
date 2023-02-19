@@ -22,7 +22,7 @@ const ResetPassword = () => {
 
 		try {
 			const res = await axios.put(
-				`http://localhost:5000/api/auth/resetpassword/${resetToken}`,
+				`https://bank-app-uqei.onrender.com/api/auth/resetpassword/${resetToken}`,
 				{ password, resetToken }
 			);
 			if (res.status === 200) {

@@ -33,7 +33,7 @@ const SingleTransaction = () => {
 			setLoading(true);
 			try {
 				const res = await axios.get(
-					`http://localhost:5000/api/transactions/find/${id}`,
+					`https://bank-app-uqei.onrender.com/api/transactions/find/${id}`,
 					config
 				);
 				if (res.status === 200) {

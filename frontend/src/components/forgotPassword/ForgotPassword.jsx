@@ -14,7 +14,7 @@ const ForgotPassword = ({ setIsForgotPassword }) => {
 		setLoading(true);
 		try {
 			const res = await axios.post(
-				"http://localhost:5000/api/auth/forgotpassword",
+				"https://bank-app-uqei.onrender.com/api/auth/forgotpassword",
 				{ email }
 			);
 			if (res.status === 200) {

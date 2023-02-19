@@ -27,7 +27,7 @@ const Transactions = () => {
 			setLoading(true);
 			try {
 				const res = await axios.get(
-					`http://localhost:5000/api/transactions`,
+					`https://bank-app-uqei.onrender.com/api/transactions`,
 					config
 				);
 				setTransactions(res.data);

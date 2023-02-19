@@ -34,7 +34,7 @@ const ForgotPin = ({ setForgotPin }) => {
 		setLoading(true);
 		try {
 			const res = await axios.post(
-				"http://localhost:5000/api/users/forgotpin",
+				"	https://bank-app-uqei.onrender.com/api/users/forgotpin",
 				{ email },
 				config
 			);

@@ -55,7 +55,7 @@ const SendTransaction = ({
 		setLoading(true);
 		try {
 			const res = await axios.post(
-				"http://localhost:5000/api/transactions",
+				"https://bank-app-uqei.onrender.com/api/transactions",
 				newTransaction,
 				config
 			);
@@ -78,12 +78,6 @@ const SendTransaction = ({
 				});
 			}
 		}
-
-		// setConfirm(true);
-		// setReceiverId("");
-		// setAmount("");
-		// setDescription("");
-		// setPIN("");
 	};
 
 	return (

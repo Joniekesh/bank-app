@@ -23,7 +23,10 @@ export const loadUser = () => async (dispatch, getState) => {
 	};
 
 	try {
-		const res = await axios.get("http://localhost:5000/api/auth/me", config);
+		const res = await axios.get(
+			"https://bank-app-uqei.onrender.com/api/auth/me",
+			config
+		);
 		dispatch(getUser(res.data));
 	} catch (error) {
 		console.log(error);
@@ -42,7 +45,10 @@ export const getAllUsers = () => async (dispatch, getState) => {
 	};
 
 	try {
-		const res = await axios.get("http://localhost:5000/api/users", config);
+		const res = await axios.get(
+			"https://bank-app-uqei.onrender.com/api/users",
+			config
+		);
 		dispatch(getUsers(res.data));
 	} catch (error) {
 		console.log(error);
@@ -62,7 +68,7 @@ export const createTransactionPin = (data) => async (dispatch, getState) => {
 	dispatch(createPINRequest());
 	try {
 		const res = await axios.put(
-			"http://localhost:5000/api/users/pin",
+			"https://bank-app-uqei.onrender.com/api/users/pin",
 			data,
 			config
 		);
@@ -95,7 +101,7 @@ export const updateUser = (data) => async (dispatch, getState) => {
 	dispatch(updateUserRequest());
 	try {
 		const res = await axios.put(
-			"http://localhost:5000/api/users/me",
+			"https://bank-app-uqei.onrender.com/api/users/me",
 			data,
 			config
 		);

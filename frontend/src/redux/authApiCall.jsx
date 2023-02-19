@@ -8,10 +8,13 @@ export const login =
 	async (dispatch) => {
 		dispatch(loginRequest());
 		try {
-			const res = await axios.post("http://localhost:5000/api/auth/login", {
-				email,
-				password,
-			});
+			const res = await axios.post(
+				"https://bank-app-uqei.onrender.com/api/auth/login",
+				{
+					email,
+					password,
+				}
+			);
 
 			dispatch(loadUser());
 			dispatch(getAllUsers());
