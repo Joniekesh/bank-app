@@ -201,7 +201,7 @@ router.post(
 			await user.save();
 
 			// Create Reset URL to email to provided email address
-			const resetUrl = `http://localhost:5173/resetpassword/${resetToken}`;
+			const resetUrl = `https://bank-app-uqei.onrender.com/resetpassword/${resetToken}`;
 
 			//HTML Message
 			const message = `

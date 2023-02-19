@@ -143,12 +143,6 @@ router.post(
 		try {
 			const user = await User.findOne({ email });
 
-			// if (!email) {
-			// 	return res
-			// 		.status(404)
-			// 		.json({ errors: [{ msg: "Email is required." }] });
-			// }
-
 			if (user.email !== email)
 				return res.status(400).json({
 					errors: [
@@ -162,7 +156,7 @@ router.post(
 			await user.save();
 
 			// Create Reset URL to email to provided email address
-			const resetUrl = `http://localhost:5173/resetpin/${resetPinToken}`;
+			const resetUrl = `https://bank-app-uqei.onrender.com/resetpin/${resetPinToken}`;
 
 			//HTML Message
 			const message = `
