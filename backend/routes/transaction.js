@@ -39,7 +39,7 @@ router.post(
 			);
 
 			if (!isPINmatch) {
-				return res.status(400).json({ errors: [{ msg: "Invalid PIN." }] });
+				return res.status(400).json({ errors: [{ msg: "Incorrect PIN." }] });
 			}
 
 			if (currentUser._id.toString() === receiverId) {
@@ -56,7 +56,7 @@ router.post(
 				return res.status(400).json({
 					errors: [
 						{
-							msg: "Invalid account number.",
+							msg: "Icorrect account number.",
 						},
 					],
 				});
@@ -127,7 +127,7 @@ router.post(
 			if (err.kind == "ObjectId") {
 				return res
 					.status(400)
-					.json({ errors: [{ msg: "Invalid account number." }] });
+					.json({ errors: [{ msg: "Incorrect account number." }] });
 			}
 			res.status(500).json("Server Error!");
 		}
