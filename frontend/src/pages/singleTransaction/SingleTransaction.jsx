@@ -58,7 +58,7 @@ const SingleTransaction = () => {
 					}
 				>
 					<div className="titleContainer">
-						<span>devsBank</span>
+						<span>apexBank</span>
 						<h2>
 							{transaction?.sender === user?._id ? "Debit" : "Credit"} Alert
 						</h2>

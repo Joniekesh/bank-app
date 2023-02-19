@@ -100,7 +100,10 @@ const Transactions = () => {
 											>
 												<FiEye
 													style={{
-														border: "1px solid green",
+														border:
+															user?._id === transaction?.sender
+																? "1px solid crimson"
+																: "1px solid green",
 														fontSize: "20px",
 														height: "20px",
 														width: "30px",

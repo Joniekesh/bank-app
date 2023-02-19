@@ -165,7 +165,7 @@ const Register = () => {
 						<div className="formInput">
 							<input
 								type="date"
-								placeholder="Last name"
+								placeholder="Date of birth"
 								name="birthday"
 								value={birthday}
 								onChange={handleChange}

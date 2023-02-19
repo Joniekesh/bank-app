@@ -52,6 +52,16 @@ router.post(
 				});
 			}
 
+			if (user._id !== receiverId) {
+				return res.status(400).json({
+					errors: [
+						{
+							msg: "Invalid account number.",
+						},
+					],
+				});
+			}
+
 			// Check if the sender's account balance is enough to execute the transaction
 			if (amount > currentUser.balance) {
 				return res.status(400).json({

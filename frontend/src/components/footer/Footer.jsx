@@ -45,7 +45,7 @@ const Footer = () => {
 						style={{ textDecoration: "none", color: "inherit" }}
 					>
 						<li>
-							<AiOutlineSend style={{ fontSize: "20px" }} />
+							<AiOutlineSend style={{ fontSize: "22px" }} />
 						</li>
 					</Link>
 					<Link
@@ -53,7 +53,7 @@ const Footer = () => {
 						style={{ textDecoration: "none", color: "inherit" }}
 					>
 						<li>
-							<BsArrowLeftRight style={{ fontSize: "20px" }} />
+							<BsArrowLeftRight style={{ fontSize: "22px" }} />
 						</li>
 					</Link>
 					<Link
@@ -61,7 +61,7 @@ const Footer = () => {
 						style={{ textDecoration: "none", color: "inherit" }}
 					>
 						<li onClick={handleLogout}>
-							<IoMdLogOut style={{ fontSize: "20px" }} />
+							<IoMdLogOut style={{ fontSize: "22px" }} />
 						</li>
 					</Link>
 				</ul>

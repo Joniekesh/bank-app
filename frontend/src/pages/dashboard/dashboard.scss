@@ -16,15 +16,13 @@
 		background-color: rgba(0, 128, 0, 0.26);
 		padding: 10px;
 		border-radius: 10px;
-		position: relative;
 
 		.edit {
-			position: absolute;
-			bottom: 10px;
-			right: 10px;
 			display: flex;
 			align-items: center;
 			gap: 16px;
+			float: right;
+			margin-top: 8px;
 
 			@include mobile {
 				right: 20px;
