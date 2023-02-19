@@ -156,7 +156,7 @@ router.post(
 			await user.save();
 
 			// Create Reset URL to email to provided email address
-			const resetUrl = `https://bank-app-uqei.onrender.com/api/resetpin/${resetPinToken}`;
+			const resetUrl = `https://apexbank.netlify.app/resetpin/${resetPinToken}`;
 
 			//HTML Message
 			const message = `

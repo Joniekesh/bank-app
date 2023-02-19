@@ -201,7 +201,7 @@ router.post(
 			await user.save();
 
 			// Create Reset URL to email to provided email address
-			const resetUrl = `https://bank-app-uqei.onrender.com/api/resetpassword/${resetToken}`;
+			const resetUrl = `https://apexbank.netlify.app/resetpassword/${resetToken}`;
 
 			//HTML Message
 			const message = `
