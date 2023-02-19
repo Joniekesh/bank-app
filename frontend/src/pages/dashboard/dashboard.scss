@@ -1,0 +1,209 @@
+@import "../../global.scss";
+
+.dashboard {
+	display: flex;
+	flex-direction: column;
+	margin-top: 10px;
+	gap: 6px;
+	width: 80%;
+
+	@include mobile {
+		width: 100%;
+		margin-top: unset;
+	}
+
+	.details {
+		background-color: rgba(0, 128, 0, 0.26);
+		padding: 10px;
+		border-radius: 10px;
+		position: relative;
+
+		.edit {
+			position: absolute;
+			bottom: 10px;
+			right: 10px;
+			display: flex;
+			align-items: center;
+			gap: 16px;
+
+			@include mobile {
+				right: 20px;
+			}
+
+			.pinEdit {
+				display: flex;
+				gap: 4px;
+				align-items: center;
+				cursor: pointer;
+				background-color: rgb(0, 63, 0);
+				color: white;
+				padding: 6px;
+				border-radius: 6px;
+				transition: all 0.4s ease-in-out;
+				font-size: 14px;
+
+				&:hover {
+					transform: scale(1.03);
+				}
+			}
+
+			.profileEdit {
+				display: flex;
+				gap: 4px;
+				align-items: center;
+				cursor: pointer;
+				background-color: rgb(0, 41, 0);
+				color: white;
+				padding: 6px;
+				border-radius: 6px;
+				transition: all 0.4s ease-in-out;
+				font-size: 14px;
+
+				&:hover {
+					transform: scale(1.03);
+				}
+			}
+		}
+
+		.detailsTop {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			gap: 20px;
+
+			.accN {
+				display: flex;
+				flex-direction: column;
+				font-weight: bold;
+				text-align: center;
+
+				h1 {
+					color: rgb(0, 63, 0);
+
+					@include mobile {
+						font-size: 26px;
+					}
+				}
+			}
+
+			.userInfo {
+				display: flex;
+				flex-direction: column;
+				font-weight: bold;
+				text-align: center;
+
+				h2 {
+					color: rgb(0, 63, 0);
+
+					@include mobile {
+						font-size: 26px;
+					}
+				}
+			}
+
+			.accBalance {
+				display: flex;
+				flex-direction: column;
+
+				span {
+					font-weight: bold;
+				}
+
+				.balanceDiv {
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+
+					.balance {
+						color: rgb(0, 63, 0);
+					}
+
+					.outerDiv {
+						display: flex;
+						justify-content: flex-end;
+						background-color: gray;
+						padding: 4px;
+						width: 60px;
+						border-radius: 20px;
+						cursor: pointer;
+						transition: all 0.5s ease-in-out;
+
+						&.notShow {
+							justify-content: flex-start;
+							background-color: white;
+						}
+
+						.innerDiv {
+							text-align: center;
+							width: 20px;
+							height: 20px;
+							border-radius: 50%;
+							background-color: green;
+
+							&.notShow {
+								background-color: gray;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		.item {
+			display: flex;
+			align-items: center;
+			padding: 8px;
+
+			.itemTitle {
+				flex: 1;
+				font-weight: 700;
+			}
+
+			.itemDesc {
+				flex: 2;
+				font-weight: 600;
+				font-size: 16px;
+			}
+		}
+	}
+
+	.latestTransactions {
+		background-color: white;
+		padding: 10px;
+		border-radius: 10px;
+
+		h2 {
+			text-align: center;
+			color: rgb(0, 63, 0);
+			margin-bottom: 10px;
+		}
+
+		.responsiveTable {
+			overflow-x: auto;
+
+			table {
+				border-collapse: collapse;
+				border-spacing: 0;
+				width: 100%;
+				border: 1px solid #ddd;
+
+				thead {
+					background-color: rgba(0, 128, 0, 0.26);
+				}
+				th,
+				td {
+					text-align: left;
+					padding: 8px;
+				}
+
+				tr:nth-child(even) {
+					background-color: #f2f2f2;
+
+					&:hover {
+						background-color: rgba(0, 128, 0, 0.26);
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,125 @@
+@import "../../global.scss";
+
+.singleTransaction {
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	.container {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		width: 60%;
+		height: max-content;
+		border-radius: 10px;
+		overflow: hidden;
+		border: 1px solid green;
+
+		@include mobile {
+			width: 98%;
+		}
+
+		&.red {
+			border: 1px solid crimson;
+		}
+
+		.titleContainer {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: 8px;
+			flex-direction: column;
+			background-color: white;
+			width: 100%;
+			padding: 10px;
+
+			span {
+				font-weight: bold;
+			}
+
+			h2 {
+				color: rgb(0, 63, 0);
+			}
+		}
+
+		.top {
+			background-color: green;
+			width: 100%;
+			padding: 10px;
+			text-align: center;
+			color: white;
+
+			&.red {
+				background-color: crimson;
+			}
+		}
+
+		.middle {
+			display: flex;
+			flex-direction: column;
+			gap: 20px;
+			background-color: white;
+			width: 100%;
+			padding: 10px;
+
+			.item {
+				display: flex;
+				align-items: center;
+				font-size: 15px;
+
+				.key {
+					flex: 1;
+					font-weight: bold;
+				}
+
+				.value {
+					flex: 2;
+					font-weight: 500;
+				}
+			}
+		}
+
+		.bottom {
+			width: 100%;
+			background-color: gray;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding: 10px;
+
+			.save {
+				background-color: green;
+				color: white;
+				border: none;
+				cursor: pointer;
+				padding: 8px;
+				border-radius: 6px;
+				width: 70px;
+				font-weight: 500;
+				transition: all 0.5s ease-in-out;
+
+				&:hover {
+					transform: scale(1.05);
+				}
+			}
+
+			.cancel {
+				background-color: crimson;
+				color: white;
+				border: none;
+				cursor: pointer;
+				padding: 8px;
+				border-radius: 6px;
+				width: 70px;
+				font-weight: 500;
+				transition: all 0.5s ease-in-out;
+
+				&:hover {
+					transform: scale(1.05);
+				}
+			}
+		}
+	}
+}

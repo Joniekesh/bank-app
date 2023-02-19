@@ -1,0 +1,79 @@
+@import "../../global.scss";
+
+.navbar {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 60px;
+	padding: 10px;
+	background-color: green;
+	color: white;
+	position: sticky;
+	top: 0;
+	left: 0;
+	z-index: 3;
+
+	.navbarContainer {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		width: 80%;
+
+		@include responsive818 {
+			width: 100%;
+		}
+
+		@include mobile {
+			width: 100%;
+		}
+
+		.navLeft {
+			h2 {
+				cursor: pointer;
+			}
+		}
+
+		.navRight {
+			display: flex;
+			align-items: center;
+			gap: 20px;
+
+			ul {
+				list-style: none;
+				display: flex;
+				align-items: center;
+				gap: 20px;
+				cursor: pointer;
+				font-weight: 500;
+
+				@include mobile {
+					display: none;
+				}
+			}
+
+			li {
+				padding: 6px;
+				transition: all 0.5s ease-in-out;
+
+				&:hover {
+					background-color: rgb(0, 63, 0);
+					border-radius: 6px;
+					transform: scale(1.03);
+				}
+			}
+		}
+
+		.hamburger {
+			display: none;
+			cursor: pointer;
+			font-size: 20px;
+			z-index: 3;
+			color: white;
+
+			@include mobile {
+				display: flex;
+			}
+		}
+	}
+}

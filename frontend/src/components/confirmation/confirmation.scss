@@ -1,0 +1,96 @@
+.confirmation {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.8);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 10;
+
+	.container {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		background-color: white;
+		padding: 6px;
+		width: max-content;
+		height: max-content;
+		border-radius: 10px;
+
+		h2 {
+			position: absolute;
+			top: 10px;
+			left: 0px;
+			right: 0px;
+			text-align: center;
+			color: rgb(0, 63, 0);
+		}
+
+		.icon {
+			position: absolute;
+			top: 10px;
+			right: 10px;
+			cursor: pointer;
+			font-size: 30px;
+		}
+
+		p {
+			margin: 30px 0px;
+			width: 80%;
+			text-align: center;
+			font-weight: 600;
+		}
+
+		.items {
+			display: flex;
+			flex-direction: column;
+			gap: 16px;
+			font-size: 14.5px;
+
+			.item {
+				display: flex;
+				align-items: center;
+				gap: 16px;
+
+				.key {
+					color: rgb(0, 63, 0);
+					font-weight: 600;
+				}
+
+				.value {
+					font-weight: 500;
+				}
+			}
+		}
+
+		.buttons {
+			width: 70%;
+			margin-top: 16px;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+
+			button {
+				padding: 8px;
+				border: none;
+				cursor: pointer;
+				width: 80px;
+				border-radius: 5px;
+			}
+
+			.save {
+				background-color: green;
+				color: white;
+			}
+
+			.cancel {
+				background-color: gray;
+			}
+		}
+	}
+}

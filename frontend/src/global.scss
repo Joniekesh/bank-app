@@ -1,0 +1,14 @@
+$mobile: 600px;
+$responsive818: 818px;
+
+@mixin responsive818 {
+	@media (max-width:#{$responsive818}) {
+		@content;
+	}
+}
+
+@mixin mobile {
+	@media (max-width:#{$mobile}) {
+		@content;
+	}
+}
