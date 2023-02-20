@@ -39,8 +39,8 @@ const SendTransaction = ({
 		e.preventDefault();
 
 		const newTransaction = {
-			sender: user._id,
-			receiverId,
+			sender: user,
+			receiverId: guestUser._id,
 			amount,
 			description,
 			PIN,

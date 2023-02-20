@@ -118,7 +118,7 @@ const Transactions = () => {
 						</table>
 					</div>
 				) : (
-					<span>No transaction yet!</span>
+					<span className="empty">No transaction yet!</span>
 				)}
 			</div>
 		</div>

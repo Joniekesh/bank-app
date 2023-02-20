@@ -52,7 +52,7 @@ router.post(
 				});
 			}
 
-			if (!receiverId) {
+			if (user._id.toString() !== receiverId) {
 				return res.status(400).json({
 					errors: [
 						{
