@@ -224,7 +224,11 @@ const Dashboard = ({
 						</table>
 					</div>
 				) : (
-					<span>No transaction yet!</span>
+					<span
+						style={{ textAlign: "center", fontSize: "24px", opacity: "0.5" }}
+					>
+						No transaction yet!
+					</span>
 				)}
 			</div>
 			{isChangePin && <ChangePin setIsChangePin={setIsChangePin} />}

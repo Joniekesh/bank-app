@@ -52,11 +52,11 @@ router.post(
 				});
 			}
 
-			if (user._id !== receiverId) {
+			if (!receiverId) {
 				return res.status(400).json({
 					errors: [
 						{
-							msg: "Icorrect account number.",
+							msg: "Incorrect account number.",
 						},
 					],
 				});
@@ -71,58 +71,58 @@ router.post(
 						},
 					],
 				});
-			} else {
-				// Calc sender's and receivers net account balances
-				const netSenderBalance = (currentUser.balance =
-					Number(currentUser.balance) - Number(amount));
-				const netReceiverBalance = (user.balance =
-					Number(user.balance) + Number(amount));
-
-				await User.findByIdAndUpdate(
-					currentUser._id,
-					{ ...currentUser, netSenderBalance },
-					{ new: true }
-				);
-
-				await User.findByIdAndUpdate(
-					user._id,
-					{ ...user, netReceiverBalance },
-					{ new: true }
-				);
-
-				// Initialize transaction object
-				const transaction = new Transaction({
-					accounts: [req.user.id, user._id],
-					sender: currentUser,
-					receiverId: user._id,
-					amount,
-					description,
-					PIN,
-				});
-
-				const savedTransaction = await transaction.save();
-
-				// Structure the transaction response to be returned to the client
-				const sructuredTransaction = {
-					_id: savedTransaction._id,
-					accounts: savedTransaction.accounts,
-					sender: {
-						senderAccount: savedTransaction.sender._id,
-						firstName: savedTransaction.sender.firstName,
-						lastName: savedTransaction.sender.lastName,
-					},
-					receiverAccount: savedTransaction.receiverId,
-					receiverFirstname: user.firstName,
-					receiverLastname: user.lastName,
-					amountSent: savedTransaction.amount,
-					balanceRemaining: netSenderBalance,
-					description: savedTransaction.description,
-					createdAt: transaction.createdAt,
-					updatedAt: transaction.updatedAt,
-				};
-
-				res.status(200).json({ transaction: sructuredTransaction });
 			}
+
+			// Calc sender's and receivers net account balances
+			const netSenderBalance = (currentUser.balance =
+				Number(currentUser.balance) - Number(amount));
+			const netReceiverBalance = (user.balance =
+				Number(user.balance) + Number(amount));
+
+			await User.findByIdAndUpdate(
+				currentUser._id,
+				{ ...currentUser, netSenderBalance },
+				{ new: true }
+			);
+
+			await User.findByIdAndUpdate(
+				user._id,
+				{ ...user, netReceiverBalance },
+				{ new: true }
+			);
+
+			// Initialize transaction object
+			const transaction = new Transaction({
+				accounts: [req.user.id, user._id],
+				sender: currentUser,
+				receiverId: user._id,
+				amount,
+				description,
+				PIN,
+			});
+
+			const savedTransaction = await transaction.save();
+
+			// Structure the transaction response to be returned to the client
+			const sructuredTransaction = {
+				_id: savedTransaction._id,
+				accounts: savedTransaction.accounts,
+				sender: {
+					senderAccount: savedTransaction.sender._id,
+					firstName: savedTransaction.sender.firstName,
+					lastName: savedTransaction.sender.lastName,
+				},
+				receiverAccount: savedTransaction.receiverId,
+				receiverFirstname: user.firstName,
+				receiverLastname: user.lastName,
+				amountSent: savedTransaction.amount,
+				balanceRemaining: netSenderBalance,
+				description: savedTransaction.description,
+				createdAt: transaction.createdAt,
+				updatedAt: transaction.updatedAt,
+			};
+
+			res.status(200).json({ transaction: sructuredTransaction });
 		} catch (err) {
 			if (err.kind == "ObjectId") {
 				return res

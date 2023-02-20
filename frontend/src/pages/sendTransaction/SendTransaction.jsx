@@ -39,7 +39,7 @@ const SendTransaction = ({
 		e.preventDefault();
 
 		const newTransaction = {
-			sender: user,
+			sender: user._id,
 			receiverId,
 			amount,
 			description,
